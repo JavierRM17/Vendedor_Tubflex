@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Vendedor_Tubflex.Views.LoginPage"
+             xmlns:vm="clr-namespace:Vendedor_Tubflex.ViewModels"
+             Shell.NavBarIsVisible="True"
+             Title="Login">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="DarkBlue" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="Logo_Tubflex.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout x:Name="Login" VerticalOptions="Center" HorizontalOptions="Center">
+                <Label HorizontalOptions="Center" Text="Login" FontSize="Title" Padding="30,10,30,10"/>
+                <Label Text="Usuario"></Label>
+                <Entry Placeholder="Correo Electronico" x:Name="user" WidthRequest="350" Margin="10"></Entry>
+                <Label Text="Contraseña"></Label>
+                <Entry Placeholder="Contraseña" x:Name="password" WidthRequest="350" Margin="10"></Entry>
+                <Button Text="Ingresar" Margin="15" WidthRequest="50" HeightRequest="50"></Button>
+
+                <!--<Label Text="Correo" x:Name="Correo"></Label>
+                <Label Text="Pass" x:Name="pass"></Label> -->
+
+                <StackLayout Padding="10,0,10,0">
+                    <Button Text="Cancelar" BackgroundColor="Red" WidthRequest="100" HeightRequest="50" Command="{Binding LoginCommand}" Margin="15"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

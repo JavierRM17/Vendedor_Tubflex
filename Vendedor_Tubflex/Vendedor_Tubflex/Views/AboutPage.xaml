@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Vendedor_Tubflex.Views.AboutPage"
+             xmlns:vm="clr-namespace:Vendedor_Tubflex.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="DarkBlue" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="Logo_Tubflex.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout x:Name="Login" VerticalOptions="Center" HorizontalOptions="Center">
+                <Label HorizontalOptions="Center" Text="Conectar" FontSize="Title" Padding="30,10,30,10"/>
+                <Label Text="Dirección IP"></Label>
+                <Entry Placeholder="Ejemplo: 10.1.1.0" x:Name="ip_Address" WidthRequest="350"></Entry>
+                <Label Text="Puerto"></Label>
+                <Entry Placeholder="3051" x:Name="Tb_Port" WidthRequest="350"></Entry>
+                <Button ClassId="btn_Conectar" Text="Conectar" Clicked="Button_Clicked_1"></Button>
+                <Label Text="Ip: " x:Name="ip"></Label>
+                <Label Text="Puerto: " x:Name="puerto"></Label>
+                
+                <Label HorizontalOptions="Center" Text="Login" FontSize="Title" Padding="30,10,30,10"/>
+                <Label Text="Usuario"></Label>
+                <Entry Placeholder="Correo Electronico" x:Name="user" WidthRequest="350"></Entry>
+                <Label Text="Contraseña"></Label>
+                <Entry Placeholder="Contraseña" x:Name="password" WidthRequest="350"></Entry>
+                <Button Text="Ingresar" Clicked="Button_Clicked"></Button>
+
+                <Label Text="Correo" x:Name="Correo"></Label>
+                <Label Text="Pass" x:Name="pass"></Label>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
